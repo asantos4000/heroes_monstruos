@@ -1,16 +1,18 @@
-function Monstruo(energia, poderataque, raza) {
+function Monstruo(energia, poderataque, raza, nivel) {
 	//this.nombre = nombre;
 	this.energia = energia;
 	this.poderataque = poderataque;
-	this.raza = raza;	
+	this.raza = raza;
+	this.nivel = nivel;	
 }
 
-function Heroe(salud, poderataque, raza) {
+function Heroe(energia, poderataque, raza, experiencia; nivel) {
 	//this.nombre = nombre;
 	this.energia = energia;
 	this.poderataque = poderataque;
 	this.raza = raza;
 	this.experiencia = experiencia;
+	this.nivel = nivel;
 }
 
 function Pocion(energia_que_recupera) {
@@ -38,29 +40,15 @@ Monstruo.prototype.descontarEnergia = function(descontarEnergia) {
 }
 
 Heroe.prototype.aumento_experiencia_heroe = function() {
-	var experiencia_heroe = this.experiencia*1000;
+	var experiencia_heroe = this.experiencia*10;
 	this.experiencia = experiencia_heroe;
 	console.log('Experiencia heroe: ' + experiencia_heroe);
-	if (experiencia_heroe modulo 1000 >) {
-		console.log ('Heroe se murio');
+	var factorNivel = Math.floor(experiencia_heroe/1000);
+	if ( factorNivel>= 1 ) {
+		 var nuevoNivel = factorNivel*this.nivel;
+		 this.nivel = nuevoNivel; 
+		 var poderataque = this.poderataque*nuevoNivel;
+		var energia = this.energia*this.nivel;
 	}
 }
-
---------------
-Deportista.prototype.check = function(esp2) {
-	
-	If (espe2= this.especialidad) {
-	 this.imprimir();	
-	} else {
-
-	alert ('No es su' + especialidad);
-	Deportista.imprimir (especialidad);
-	}
-	
-}
-var D1 = new Deportista('10K');
-var D2 = new Deportista('Posta');
-var D3 = new Deportista('400 Mts Planos');
-
-
 
